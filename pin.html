@@ -2,6 +2,7 @@
         <head>
         <title>Pintrest Login</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="sdk.js"></script>
         </head>
         <body>
         <p onclick="pintrest()">Click me</p>
@@ -43,14 +44,7 @@
             //end login
         };
 
-        (function(d, s, id){
-            var js, pjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//assets.pinterest.com/sdk/sdk.js";
-            pjs.parentNode.insertBefore(js, pjs);
-        }(document, 'script', 'pinterest-jssdk'));
-
+     
         }
     </script>
 
