@@ -25,7 +25,7 @@
                 }
             //get board info
             var pins = [];
-            PDK.request('/v1/me', function (response) {
+            PDK.request('/v1/me/', function (response) {
               if (!response || response.error) {
                 //alert('Error occurred');
               } else {
