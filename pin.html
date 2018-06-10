@@ -10,6 +10,7 @@
         </body>
     <script>
     function pintrest(){
+        console.log('clicked');
         window.pAsyncInit = function() {
             PDK.init({
                 appId: "4970373560536148770",
@@ -17,20 +18,21 @@
             });
 
             //login
-            PDK.login({ scope : 'read_public' }, function(response){
-                if (!response || response.error) {
-                   alert('Error occurred');
-                } else {
-                   console.log(JSON.stringify(response));
-                }
+            // PDK.login({ scope : 'read_public' }, function(response){
+            //     if (!response || response.error) {
+            //        alert('Error occurred');
+            //     } else {
+            //        console.log(JSON.stringify(response));
+            //     }
             //get board info
             var pins = [];
             PDK.request('/v1/me/', function (response) {
               if (!response || response.error) {
                 console.log(reponse.error);
+                console.log('no working')
               } else {
                 console.log(JSON.stringify(response));
-                  //  alert('success');
+                   console.log('success');
                     console.log(PDK.getSession().accessToken);
 
                     var yahoo = $( "#result" ).load( "https://api.pinterest.com/v1/me/?access_token="+PDK.getSession().accessToken+"&fields=counts" );
@@ -40,7 +42,7 @@
             });
 
             //end get board info
-            });
+            // });
             //end login
         };
 
